@@ -1,0 +1,21 @@
+{
+  "name": "MyProject",
+  "version": "0.0.1",
+  "description": "Awesome project developed with TypeORM.",
+  "devDependencies": {
+    "@types/node": "^8.0.29",
+    "ts-node": "^7.0.0",
+    "typescript": "2.5.2"
+  },
+  "dependencies": {
+    "pg": "^7.3.0",
+    "reflect-metadata": "^0.1.10",
+    "typeorm": "0.2.7"
+  },
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "db:migrate": "ts-node ./node_modules/.bin/typeorm migration:run",
+    "db:drop": "ts-node ./node_modules/.bin/typeorm schema:drop",
+    "db:dev": "docker run -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=test -p 5432:5432 -d postgres:10.4"
+  }
+}
